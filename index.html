@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mile High Athletics — Private personal training in Denver, CO with Coach Ty Sonaty. 1-on-1 strength training and nutrition coaching. Book a free consultation today.">
+<meta name="keywords" content="personal trainer Denver, Denver personal training, strength training Denver, private gym Denver, Coach Ty Sonaty, Mile High Athletics, 1-on-1 training Denver, corrective exercise Denver, nutrition coaching Denver">
+<meta name="author" content="Ty Sonaty, Mile High Athletics">
+<meta property="og:title" content="Mile High Athletics | Personal Training Denver CO">
+<meta property="og:description" content="Private 1-on-1 coaching and strength training with Coach Ty Sonaty in Denver, CO.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://milehighathletics.netlify.app/">
+<link rel="canonical" href="https://milehighathletics.netlify.app/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mile High Athlete | Mile High Athletics | #1 Personal Trainer in Denver CO | Coach Ty Sonaty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:        #0c0c0c;
+  --ink-2:      #141414;
+  --ink-3:      #1c1c1c;
+  --ink-4:      #252525;
+  --blue:       #2B5BA8;
+  --blue-hi:    #3b6ec8;
+  --blue-dim:   #1a3a6e;
+  --gold:       #d4a94a;
+  --snow:       #f2efe9;
+  --snow-dim:   rgba(242,239,233,0.62);
+  --rule:       rgba(242,239,233,0.07);
+  --fs-xs:      0.68rem;
+  --fs-sm:      0.82rem;
+  --fs-body:    0.96rem;
+  --track:      0.18em;
+  --track-mid:  0.1em;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ink);
+  color: var(--snow);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; }
+a { text-decoration: none; }
+
+/* NAV */
+nav {
+  position: fixed; inset: 0 0 auto;
+  z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 68px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.55rem; letter-spacing: var(--track); color: var(--ink);
+}
+.nav-logo b { color: var(--blue-hi); font-weight: 400; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: var(--ink); font-size: var(--fs-sm); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--blue); }
+.nav-cta {
+  background: var(--blue) !important; color: #ffffff !important;
+  padding: 10px 24px; border-radius: 2px; transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--blue-hi) !important; }
+
+
+/* NAV SPACER */
+.nav-spacer { height: 106px; background: #ffffff; }
+
+/* ── HERO WRAP (new full-width design) ── */
+.hero-wrap {
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Full-width image block */
+.hero-img-block {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  padding-top: 0;
+}
+.hero-full-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tagline strip sits right below image */
+.hero-tagline-strip {
+  background: #ffffff;
+  padding: 36px 68px 16px;
+  border-top: 4px solid var(--blue);
+}
+.hero-tagline-eyebrow {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  color: rgba(12,12,12,.6);
+  margin-bottom: 10px;
+}
+.hero-tagline-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 6rem);
+  line-height: .92;
+  letter-spacing: .02em;
+  color: var(--ink);
+  margin: 0;
+}
+.hero-tagline-h1 em {
+  font-style: normal;
+  color: var(--blue);
+}
+
+/* CTA + stats row */
+.hero-cta-row {
+  background: #ffffff;
+  padding: 28px 68px 52px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.hero-cta-row .hero-btns {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.hero-cta-row .hero-stats {
+  display: flex;
+  gap: 44px;
+  padding-left: 44px;
+  border-left: 1px solid var(--rule);
+}
+
+/* ── RESPONSIVE ── */
+
+/* ── SECTION CHROME ── */
+.lbl {
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: var(--track); text-transform: uppercase;
+  color: rgba(242,239,233,.75); margin-bottom: 14px;
+}
+.h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  letter-spacing: .02em; line-height: .95; margin-bottom: 18px;
+}
+.body-lead {
+  font-size: var(--fs-body); font-weight: 300; line-height: 1.72;
+  color: var(--snow-dim); max-width: 540px;
+}
+
+/* ── ABOUT ── */
+.about {
+  background: var(--ink-2); padding: 80px 68px;
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start;
+}
+.about-body {
+  font-size: var(--fs-body); font-weight: 300; line-height: 1.8;
+  color: var(--snow-dim); margin: 18px 0 28px;
+}
+.about-body strong { color: var(--snow); font-weight: 500; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+  background: rgba(43,91,168,.14); border: 1px solid rgba(43,91,168,.3);
+  color: rgba(242,239,233,.78);
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: var(--track-mid); text-transform: uppercase;
+  padding: 7px 16px; border-radius: 2px;
+}
+.pull {
+  border-left: 3px solid var(--blue); padding: 20px 28px;
+  background: rgba(43,91,168,.07); border-radius: 0 2px 2px 0;
+  font-size: 1.08rem; font-weight: 300; font-style: italic;
+  line-height: 1.65; color: rgba(242,239,233,.8);
+}
+
+/* ── SERVICES ── */
+.services { padding: 80px 68px; background: var(--ink); }
+.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 40px; }
+.card {
+  background: var(--ink-3); padding: 36px 32px;
+  position: relative; overflow: hidden; transition: background .25s;
+}
+.card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.card:hover { background: var(--ink-4); }
+.card:hover::after { transform: scaleX(1); }
+.card.hot { background: var(--blue-dim); }
+.card.hot::after { transform: scaleX(1); background: var(--gold); }
+.hot-pill {
+  display: inline-block; background: var(--gold); color: var(--ink);
+  font-size: .58rem; font-weight: 800; letter-spacing: var(--track); text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; margin-bottom: 24px;
+}
+.card-icon { font-size: 1.6rem; margin-bottom: 18px; }
+.card-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: .05em; margin-bottom: 6px; }
+.card-price { font-size: 2.4rem; font-weight: 800; color: #ffffff; line-height: 1; margin-bottom: 4px; }
+.card.hot .card-price { color: var(--gold); }
+.card-freq { font-size: var(--fs-xs); color: rgba(242,239,233,.55); letter-spacing: .08em; margin-bottom: 28px; }
+.divider { height: 1px; background: var(--rule); margin: 0 0 28px; }
+.features { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+.features li {
+  font-size: var(--fs-sm); font-weight: 300; color: rgba(242,239,233,.68);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.45;
+}
+.features li::before { content: '✓'; color: rgba(242,239,233,.7); font-size: .78rem; flex-shrink: 0; margin-top: 2px; }
+.card.hot .features li::before { color: var(--gold); }
+.card.hot a.btn-solid,
+button.btn-solid,
+.btn-solid {
+  display: inline-block !important;
+  background: #ffffff !important;
+  color: #0c0c0c !important;
+  padding: 14px 32px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  border-radius: 2px !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: background .2s, transform .15s, box-shadow .2s !important;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18) !important;
+}
+a.btn-solid:hover,
+button.btn-solid:hover,
+.btn-solid:hover {
+  background: #f0f0f0 !important;
+  color: #0c0c0c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.22) !important;
+  text-decoration: none !important;
+}
+a.btn-solid:visited,
+.btn-solid:visited {
+  color: #0c0c0c !important;
+  text-decoration: none !important;
+}
+/* Hot card override */
+.card.hot a.btn-solid,
+.card.hot .btn-solid {
+  background: #ffffff !important;
+  color: #1a3a6e !important;
+}
+.card.hot a.btn-solid:hover,
+.card.hot .btn-solid:hover {
+  background: #f0f0f0 !important;
+}
+.card-cta { margin-top: 28px; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--ink-3); padding: 80px 68px; }
+.review-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 40px; }
+.review { background: var(--ink-2); padding: 28px 32px; }
+.stars { color: var(--gold); font-size: .9rem; letter-spacing: 2px; margin-bottom: 16px; }
+.review-q { font-size: .9rem; font-weight: 300; font-style: italic; line-height: 1.72; color: var(--snow-dim); margin-bottom: 26px; }
+.reviewer { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.reviewer-sub { font-size: var(--fs-xs); color: rgba(242,239,233,.45); margin-top: 3px; }
+.g-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 36px; padding: 12px 20px;
+  border: 1px solid rgba(242,239,233,.15); border-radius: 2px;
+  font-size: var(--fs-xs); color: rgba(242,239,233,.65);
+}
+.g-badge strong { color: var(--snow); }
+
+/* ── FREEBIES ── */
+.freebies { background: var(--blue-dim); padding: 80px 68px; position: relative; overflow: hidden; }
+.freebies::before {
+  content: 'FREE'; position: absolute; top: -30px; right: -20px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 20rem; letter-spacing: .02em;
+  color: rgba(255,255,255,.025); line-height: 1; pointer-events: none;
+}
+.freebie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+.freebie {
+  background: rgba(12,12,12,.55); border: 1px solid rgba(255,255,255,.07);
+  padding: 30px; border-radius: 2px;
+  display: flex; gap: 18px; align-items: flex-start;
+  transition: background .2s; cursor: pointer;
+}
+.freebie:hover { background: rgba(12,12,12,.72); }
+.freebie-ico { font-size: 1.8rem; flex-shrink: 0; margin-top: 1px; }
+.freebie-name { font-size: .92rem; font-weight: 600; margin-bottom: 6px; }
+.freebie-desc { font-size: var(--fs-sm); font-weight: 300; line-height: 1.58; color: rgba(242,239,233,.6); }
+.freebie-link { display: inline-block; margin-top: 10px; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(242,239,233,.85); }
+
+/* ── BOOKING ── */
+.booking { background: var(--ink); padding: 90px 68px; text-align: center; }
+.booking .h2 { font-size: clamp(3.2rem, 5.5vw, 6.5rem); }
+.booking .body-lead { margin: 0 auto 50px; text-align: center; }
+.booking-btn {
+  font-size: 0.82rem !important;
+  padding: 18px 44px !important;
+  letter-spacing: 0.15em !important;
+}
+.booking-note { font-size: var(--fs-xs); color: rgba(242,239,233,.40); letter-spacing: .08em; margin-top: 28px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink-2);
+  border-top: 3px solid var(--blue);
+  padding: 60px 68px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0 48px;
+  align-items: start;
+}
+/* Logo — top left */
+.f-logo {
+  grid-column: 1;
+  grid-row: 1;
+  padding-bottom: 0;
+}
+.footer-logo-img {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+/* Nav links — top center */
+.f-links {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  gap: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.f-links li { padding: 0 20px; border-right: 1px solid var(--rule); }
+.f-links li:last-child { border-right: none; }
+.f-links a { color: rgba(242,239,233,.55); font-size: var(--fs-sm); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+.f-links a:hover { color: var(--snow); }
+/* Social icons — top right */
+.f-social {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.s-link {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(242,239,233,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: rgba(242,239,233,.45);
+  transition: border-color .2s, color .2s, background .2s;
+  text-decoration: none;
+}
+.s-link:hover { border-color: var(--blue-hi); color: var(--snow); background: rgba(43,91,168,.15); }
+/* Copyright — full width, bottom row */
+.f-copyright {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 0.68rem;
+  color: rgba(242,239,233,.22);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .22s; }
+.reveal-d3 { transition-delay: .34s; }
+
+
+/* NAV LOGO IMAGE */
+.nav-logo-img {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-logo-img-el {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+/* FOOTER LOGO IMAGE */
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 14px 24px; }
+  .nav-links { display: none; }
+  
+  
+  
+  .hero-stats { gap: 24px; }
+  .hero-tagline-strip { padding: 24px 24px 10px; }
+  .hero-tagline-h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
+  .hero-cta-row { padding: 24px 24px 52px; gap: 28px; flex-direction: column; align-items: flex-start; }
+  .hero-cta-row .hero-stats { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; gap: 24px; }
+  .about { grid-template-columns: 1fr; padding: 52px 24px; gap: 36px; }
+  .services, .testimonials, .freebies, .booking { padding: 56px 24px; }
+  .cards, .review-grid, .freebie-grid { grid-template-columns: 1fr; }
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 44px 24px 32px;
+    gap: 0;
+    text-align: center;
+  }
+  .f-logo { grid-column: 1; grid-row: 1; display: flex; justify-content: center; margin-bottom: 28px; }
+  .f-links { grid-column: 1; grid-row: 2; gap: 0; margin-bottom: 28px; }
+  .f-links li { border-right: none; border-bottom: 1px solid var(--rule); padding: 0; width: 100%; }
+  .f-links a { padding: 14px 0; }
+  .f-social { grid-column: 1; grid-row: 3; justify-content: center; margin-top: 28px; }
+  .f-copyright { grid-column: 1; grid-row: 4; }
+}
+
+/* ── WHITE HERO OVERRIDES ── */
+.hero-wrap .stat-num { color: var(--ink); }
+.hero-wrap .stat-lbl { color: rgba(12,12,12,.55); }
+.hero-wrap .btn-ghost { color: var(--ink); border-color: rgba(12,12,12,.25); }
+.hero-wrap .btn-ghost:hover { color: var(--blue); border-color: var(--blue); }
+.hero-cta-row .hero-stats { border-left-color: rgba(12,12,12,.12); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Mile High Athletics",
+  "description": "Private personal training studio in Denver, CO. 1-on-1 strength training and nutrition coaching with Coach Ty Sonaty.",
+  "url": "https://milehighathletics.netlify.app/",
+  "telephone": "",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Denver",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.7392,
+    "longitude": -104.9903
+  },
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "10"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "06:00",
+      "closes": "20:00"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ty Sonaty",
+    "jobTitle": "Certified Personal Trainer"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Programs</a></li>
+    <li><a href="#results">Reviews</a></li>
+    <li><a href="#freebies">Free Program</a></li>
+    <li><a href="#booking" class="nav-cta">Book Free Consult</a></li>
+  </ul>
+  <a href="#" class="nav-logo-img"><img src="logo.png" alt="Mile High Athletics Logo" class="nav-logo-img-el" /></a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="nav-spacer"></div>
+
+  <!-- HERO IMAGE — full width, no crop -->
+  <div class="hero-img-block">
+    <img src="hero.png" alt="Coach Ty Sonaty — Mile High Athletics Denver Personal Trainer" class="hero-full-img" />
+  </div>
+
+  <!-- TAGLINE STRIP -->
+  <div class="hero-tagline-strip">
+    <span class="hero-tagline-eyebrow">Private Training Studio · Denver, CO</span>
+    <h1 class="hero-tagline-h1">Mile High Athlete:<br><em>Denver's Elite Personal Trainer</em></h1>
+  </div>
+
+  <!-- CTA + STATS ROW -->
+  <div class="hero-cta-row">
+    <div class="hero-btns">
+      <a href="#booking" class="btn-solid">Book Free Consultation</a>
+      <a href="#services" class="btn-ghost">View Programs</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10<sup>+</sup></div>
+        <div class="stat-lbl">Years Coaching</div>
+      </div>
+      <div>
+        <div class="stat-num">200<sup>+</sup></div>
+        <div class="stat-lbl">Clients Coached</div>
+      </div>
+      <div>
+        <div class="stat-num">5<sup>★</sup></div>
+        <div class="stat-lbl">Google Rating</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about" aria-label="About Coach Ty — Denver Personal Trainer">
+  <div class="reveal">
+    <p class="lbl">About Coach Ty</p>
+    <h2 class="h2">More Than a Trainer</h2>
+    <p class="about-body">
+      I'm Ty Sonaty — Denver-based personal trainer, movement coach, and founder of Mile High Athletics. For over a decade I've helped real people get stronger, move pain-free, and build consistency that doesn't fall apart when life gets busy.<br><br>
+      <strong>My approach is built on one principle: sustainable beats intense, every time.</strong> I combine evidence-based strength training, and practical nutrition coaching into a system that works with your lifestyle — not against it.
+    </p>
+    <div class="tags">
+                  <span class="tag">Nutrition Coaching</span>
+            <span class="tag">10+ Years Experience</span>
+    </div>
+  </div>
+  <div class="reveal reveal-d1">
+    <blockquote class="pull">
+      "Whether you're starting fresh, stuck at a plateau, or rebuilding after injury — we lay the right foundation first. Then we build on it. No gimmicks, no shortcuts."
+    </blockquote>
+    <p class="about-body" style="margin-top:32px;">
+      My private Denver training studio is focused and distraction-free. No crowded gym floor, no waiting for equipment — just you, the work, and a coach who shows up prepared every single session.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services" aria-label="Personal Training Programs in Denver">
+  <div class="reveal">
+    <p class="lbl">Training Programs</p>
+    <h2 class="h2">Choose Your Path</h2>
+    <p class="body-lead">Every program includes direct coaching from Ty, custom programming, and the accountability to actually follow through.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal reveal-d1">
+      
+      <div class="card-name">1-on-1 Personal Training</div>
+            
+      <div class="divider"></div>
+      <ul class="features">
+        <li>Fully customized 1-on-1 sessions</li>
+        <li>Tailored programming for your goals</li>
+        <li>Nutrition guidance included</li>
+        <li>Flexible scheduling</li>
+        <li>Ongoing check-ins &amp; accountability</li>
+      </ul>
+      <div class="card-cta"><a href="#booking" class="btn-solid">Get Started</a></div>
+    </div>
+    <div class="card hot reveal reveal-d2">
+      <div class="hot-pill">Most Popular</div>
+      
+      <div class="card-name">Semi-Private Training</div>
+            
+      <div class="divider"></div>
+      <ul class="features">
+        <li>2–3 weekly in-person sessions</li>
+        <li>Priority scheduling — reserve your slot</li>
+                <li>Pain-free movement focus</li>
+        <li>Full custom programming suite</li>
+        <li>Recurring — cancel anytime with notice</li>
+      </ul>
+      <div class="card-cta"><a href="#booking" class="btn-solid">Get Started</a></div>
+    </div>
+    <div class="card reveal reveal-d3">
+      
+      <div class="card-name">Online Coaching</div>
+            
+      <div class="divider"></div>
+      <ul class="features">
+        <li>Custom programming delivered remotely</li>
+        <li>Weekly check-ins with Coach Ty</li>
+        <li>Video form reviews</li>
+        <li>Nutrition &amp; lifestyle guidance</li>
+        <li>Train anywhere, anytime</li>
+      </ul>
+      <div class="card-cta"><a href="#booking" class="btn-solid">Inquire Now</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="results" aria-label="Client Reviews — Denver Personal Trainer">
+  <div class="reveal">
+    <p class="lbl">Google Reviews</p>
+    <h2 class="h2">Real People. Real Results.</h2>
+    <p class="body-lead">Verified Google reviews from current and past Denver clients. No fluff, no filters.</p>
+  </div>
+  <div class="review-grid">
+    <div class="review reveal reveal-d1">
+      <div class="stars">★★★★★</div>
+      <p class="review-q">"Ty completely changed how I think about training. I came in with a bad back and left with a whole new approach to movement. He's not just a trainer — he's a real coach."</p>
+      <div class="reviewer">Michael R.</div>
+      <div class="reviewer-sub">Google Review · Verified Client</div>
+    </div>
+    <div class="review reveal reveal-d2">
+      <div class="stars">★★★★★</div>
+      <p class="review-q">"I've trained with a lot of coaches over the years. Ty is the first one who actually adjusted the plan when life got in the way instead of just telling me to push through. The results speak for themselves."</p>
+      <div class="reviewer">Sarah K.</div>
+      <div class="reviewer-sub">Google Review · Verified Client</div>
+    </div>
+    <div class="review reveal reveal-d3">
+      <div class="stars">★★★★★</div>
+      <p class="review-q">"After three knee surgeries I thought heavy lifting was behind me. Ty's mobility work alone was worth it. I'm moving better at 47 than I was at 35."</p>
+      <div class="reviewer">Dave M.</div>
+      <div class="reviewer-sub">Google Review · Verified Client</div>
+    </div>
+  </div>
+  <div class="g-badge reveal"><strong>5.0 on Google</strong>&nbsp;·&nbsp; View all reviews on Google Business Profile</div>
+</section>
+
+<!-- FREEBIES -->
+<section class="freebies" id="freebies" aria-label="Free Program from Mile High Athletics">
+  <div class="reveal">
+    <p class="lbl">Free Resources</p>
+    <h2 class="h2">Start Here — On the House</h2>
+    <p class="body-lead">Not ready to commit yet? Get a free 3-week program and start building real results.</p>
+  </div>
+  <div class="freebie-grid" style="grid-template-columns:1fr;max-width:600px;">
+    <div class="freebie reveal reveal-d1" style="flex-direction:column;align-items:center;text-align:center;padding:40px;">
+      <div>
+        <div class="freebie-name" style="font-size:1.1rem;margin-bottom:10px;">3-Week Start Smart Program</div>
+        <div class="freebie-desc" style="margin-bottom:20px;">A free 3-week intro program designed by Coach Ty to build your foundation the right way — strength, mobility, and habits that stick. Enter your email to get instant access.</div>
+        <form name="start-smart" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+          <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Your email address" required style="padding:12px 18px;border:1px solid rgba(242,239,233,.2);background:rgba(12,12,12,.4);color:var(--snow);border-radius:2px;font-size:0.88rem;min-width:240px;">
+          <button type="submit" class="btn-solid" style="padding:12px 28px !important;">Get Free Access</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking" aria-label="Book Free Personal Training Consultation Denver">
+  <div class="reveal">
+    <p class="lbl">Ready to Start?</p>
+    <h2 class="h2">Your Free Denver Training Consultation</h2>
+    <p class="body-lead">A 30-minute strategy call with Coach Ty to get clear on your goals, your gaps, and exactly what personal training in Denver should look like for you. No pitch. No pressure. Just a real plan.</p>
+    <a href="#" class="btn-solid booking-btn">Schedule Your Free Consultation →</a>
+    <p class="booking-note">Booking powered by Setmore &nbsp;·&nbsp; Available Monday – Saturday</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">
+    <img src="logo.png" alt="Mile High Athletics" class="footer-logo-img" />
+  </div>
+  <ul class="f-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Programs</a></li>
+    <li><a href="#results">Reviews</a></li>
+    <li><a href="#freebies">Free Program</a></li>
+    <li><a href="#booking">Book Now</a></li>
+  </ul>
+  <div class="f-social">
+    <a href="#" class="s-link" aria-label="Instagram">IG</a>
+    <a href="#" class="s-link" aria-label="Facebook">FB</a>
+  </div>
+  <p class="f-copyright">© 2025 Mile High Athletics &nbsp;·&nbsp; Personal Trainer Denver, CO &nbsp;·&nbsp; Coach Ty Sonaty</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
