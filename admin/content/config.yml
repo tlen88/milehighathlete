@@ -1,0 +1,271 @@
+# =============================================================
+# Mile High Athletics — Client Portal content schema (Decap CMS)
+#
+# Everything Ty can edit is defined here. Layout, colors, fonts,
+# and code are NOT editable from the portal — by design.
+# =============================================================
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Portal: created {{collection}} — {{slug}}"
+    update: "Portal: updated {{slug}}"
+    uploadMedia: "Portal: uploaded image {{path}}"
+    deleteMedia: "Portal: removed image {{path}}"
+
+# Every save becomes a Draft first; Ty publishes when ready.
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://milehighathlete.com
+display_url: https://milehighathlete.com
+logo_url: /logo-color.png
+
+collections:
+  - name: "pages"
+    label: "Website Sections"
+    description: "Choose the part of the website you want to update. Every change is saved as a draft first — nothing goes live until you press Publish."
+    files:
+
+      # ── HERO ─────────────────────────────────────────
+      - name: "hero"
+        label: "Homepage — Top Banner (Hero)"
+        file: "content/hero.json"
+        fields:
+          - { label: "Small Line Above the Headline", name: "eyebrow", widget: "string",
+              hint: "The short credibility line visitors see first, e.g. “17 Years Coaching · 300+ Clients”.",
+              pattern: ['^.{1,60}$', 'Keep this between 1 and 60 characters'] }
+          - { label: "Headline — First Part", name: "heading_before", widget: "string",
+              hint: "This is the main headline visitors see when they first open the website. Part 1 of 3.",
+              pattern: ['^.{1,60}$', 'Keep this between 1 and 60 characters'] }
+          - { label: "Headline — Highlighted Word", name: "heading_accent", widget: "string",
+              hint: "This word appears in the accent color, e.g. “Failing.”",
+              pattern: ['^.{1,25}$', 'Keep this under 25 characters'] }
+          - { label: "Headline — Last Part", name: "heading_after", widget: "string",
+              pattern: ['^.{0,60}$', 'Keep this under 60 characters'] }
+          - { label: "Supporting Sentence", name: "subtext", widget: "text",
+              hint: "One or two short sentences under the headline. Keep it under ~200 characters so it stays readable on phones.",
+              pattern: ['^[\s\S]{1,240}$', 'Keep this under 240 characters'] }
+          - { label: "Main Button Text", name: "primary_cta_label", widget: "string",
+              hint: "The big blue button. It always scrolls to the booking section.",
+              pattern: ['^.{1,30}$', 'Keep this under 30 characters'] }
+          - { label: "Second Button Text", name: "secondary_cta_label", widget: "string",
+              hint: "The outlined button. It always scrolls to the Training Programs section.",
+              pattern: ['^.{1,30}$', 'Keep this under 30 characters'] }
+          - { label: "Your Photo", name: "photo", widget: "image",
+              hint: "Vertical (portrait) photo, about 1350 × 1688 pixels (4:5). Under 300 KB is ideal — big files slow the site down." }
+          - { label: "Photo Description (Alt Text)", name: "photo_alt", widget: "string",
+              hint: "Describes the photo for screen readers and Google, e.g. “Coach Ty Sonaty, Denver personal trainer”." }
+          - label: "Quick Stats"
+            name: "stats"
+            widget: "list"
+            min: 1
+            max: 4
+            hint: "The three numbers under the buttons (3 looks best). Drag to reorder."
+            fields:
+              - { label: "Number", name: "number", widget: "string", hint: "e.g. “17+” or “5★”", pattern: ['^.{1,8}$', 'Keep this under 8 characters'] }
+              - { label: "Label", name: "label", widget: "string", hint: "e.g. “Years Coaching”", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Spoken Version (optional)", name: "aria", widget: "string", required: false,
+                  hint: "How a screen reader should say the number, e.g. “17 plus”. Leave blank if unsure." }
+
+      # ── ABOUT ────────────────────────────────────────
+      - name: "about"
+        label: "About Coach Ty"
+        file: "content/about.json"
+        fields:
+          - { label: "Small Line Above the Title", name: "eyebrow", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Section Title", name: "heading", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - label: "Opening Paragraphs"
+            name: "paragraphs_top"
+            widget: "list"
+            min: 1
+            max: 4
+            hint: "Each item is one paragraph. Wrap a sentence in double asterisks to make it **bold**."
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Credential Badges"
+            name: "badges"
+            widget: "list"
+            min: 1
+            max: 6
+            hint: "Short certification / experience tags shown as pills. Keep each under 35 characters."
+            field: { label: "Badge", name: "badge", widget: "string", pattern: ['^.{1,35}$', 'Keep this under 35 characters'] }
+          - { label: "Pull Quote", name: "quote", widget: "text",
+              hint: "The quote shown in the highlighted box. Don’t include quotation marks — they’re added automatically." }
+          - { label: "Quote Signature", name: "quote_attribution", widget: "string", hint: "e.g. “— Coach Ty Sonaty”" }
+          - label: "Closing Paragraphs"
+            name: "paragraphs_bottom"
+            widget: "list"
+            min: 0
+            max: 3
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+      # ── PROGRAMS ─────────────────────────────────────
+      - name: "programs"
+        label: "Training Programs"
+        file: "content/services.json"
+        fields:
+          - { label: "Small Line Above the Title", name: "eyebrow", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Section Title", name: "heading", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Section Intro", name: "subhead", widget: "text", pattern: ['^[\s\S]{0,200}$', 'Keep this under 200 characters'] }
+          - label: "Programs"
+            name: "programs"
+            widget: "list"
+            min: 1
+            max: 6
+            hint: "Add, remove, or drag to reorder programs. 3 programs looks best on desktop."
+            fields:
+              - { label: "Program Name", name: "name", widget: "string", pattern: ['^.{1,35}$', 'Keep this under 35 characters'] }
+              - { label: "Highlight This Program", name: "featured", widget: "boolean", default: false,
+                  hint: "Turn on to give this card the highlighted style and badge. Use on ONE program only." }
+              - { label: "Badge Text", name: "featured_badge", widget: "string", required: false, default: "",
+                  hint: "Only shows when “Highlight This Program” is on, e.g. “Most Popular”.",
+                  pattern: ['^.{0,20}$', 'Keep this under 20 characters'] }
+              - { label: "Show On Website", name: "visible", widget: "boolean", default: true,
+                  hint: "Turn off to hide this program without deleting it." }
+              - label: "What’s Included"
+                name: "features"
+                widget: "list"
+                min: 1
+                max: 8
+                hint: "One bullet point per line item. Keep each under ~70 characters."
+                field: { label: "Feature", name: "feature", widget: "string", pattern: ['^.{1,90}$', 'Keep this under 90 characters'] }
+              - { label: "Button Text", name: "button_label", widget: "string", default: "Get Started",
+                  hint: "The button always scrolls to the booking section.", pattern: ['^.{1,25}$', 'Keep this under 25 characters'] }
+
+      # ── REVIEWS ──────────────────────────────────────
+      - name: "reviews"
+        label: "Client Reviews"
+        file: "content/reviews.json"
+        fields:
+          - { label: "Small Line Above the Title", name: "eyebrow", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Section Title", name: "heading", widget: "string", pattern: ['^.{1,45}$', 'Keep this under 45 characters'] }
+          - { label: "Section Intro", name: "subhead", widget: "text", pattern: ['^[\s\S]{0,200}$', 'Keep this under 200 characters'] }
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            min: 1
+            max: 9
+            hint: "Use real reviews word-for-word from your Google Business Profile. 3 or 6 looks best."
+            fields:
+              - { label: "Client Name", name: "name", widget: "string", hint: "First name + last initial, e.g. “Michael R.”" }
+              - { label: "Review Text", name: "quote", widget: "text",
+                  hint: "Don’t include quotation marks — they’re added automatically." }
+              - { label: "Source Line", name: "source", widget: "string", default: "Google Review · Verified Client" }
+              - { label: "Show On Website", name: "visible", widget: "boolean", default: true }
+          - { label: "Rating Summary", name: "rating_summary", widget: "string", hint: "e.g. “5.0 on Google”", pattern: ['^.{1,30}$', 'Keep this under 30 characters'] }
+          - { label: "Google Reviews Link", name: "google_reviews_url", widget: "string",
+              hint: "Where “View all reviews” goes. Use your Google Business Profile reviews link.",
+              pattern: ['^https://.+', 'Must be a full link starting with https://'] }
+          - { label: "Google Reviews Link Text", name: "google_reviews_link_label", widget: "string", pattern: ['^.{1,60}$', 'Keep this under 60 characters'] }
+
+      # ── HYPERBARIC ───────────────────────────────────
+      - name: "hyperbaric"
+        label: "Hyperbaric Wellness Chamber"
+        file: "content/recovery.json"
+        fields:
+          - { label: "Section Title", name: "heading", widget: "string", pattern: ['^.{1,45}$', 'Keep this under 45 characters'] }
+          - { label: "Intro Paragraph", name: "intro", widget: "text" }
+          - { label: "Chamber Photo", name: "chamber_image", widget: "image",
+              hint: "Horizontal (landscape) photo, about 800 × 600 pixels (4:3)." }
+          - { label: "Chamber Photo Description (Alt Text)", name: "chamber_image_alt", widget: "string" }
+          - { label: "Main Paragraph", name: "body", widget: "text" }
+          - { label: "Benefits Graphic", name: "benefits_image", widget: "image",
+              hint: "Wide graphic, about 1672 × 941 pixels (16:9)." }
+          - { label: "Benefits Graphic Description (Alt Text)", name: "benefits_image_alt", widget: "string" }
+          - { label: "Button Text", name: "cta_label", widget: "string", default: "Schedule a Session",
+              hint: "The button always scrolls to the booking section.", pattern: ['^.{1,30}$', 'Keep this under 30 characters'] }
+          - { label: "Wellness Disclaimer", name: "disclaimer", widget: "text",
+              hint: "Required wording — please check with your developer before changing this substantially." }
+          - { label: "Research Link", name: "research_link_url", widget: "string", pattern: ['^https://.+', 'Must be a full link starting with https://'] }
+          - { label: "Research Link Text", name: "research_link_label", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+
+      # ── BOOKING ──────────────────────────────────────
+      - name: "booking"
+        label: "Booking & Scheduling"
+        file: "content/booking.json"
+        fields:
+          - { label: "Small Line Above the Title", name: "eyebrow", widget: "string", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Section Title", name: "heading", widget: "string", pattern: ['^.{1,60}$', 'Keep this under 60 characters'] }
+          - { label: "Section Intro", name: "subhead", widget: "text", pattern: ['^[\s\S]{0,300}$', 'Keep this under 300 characters'] }
+          - { label: "Note — Lead Text", name: "note_lead", widget: "string", default: "Booking powered by Vagaro", pattern: ['^.{1,40}$', 'Keep this under 40 characters'] }
+          - { label: "Note — Availability", name: "note_availability", widget: "string", hint: "e.g. “Available Monday–Saturday.”", pattern: ['^.{1,60}$', 'Keep this under 60 characters'] }
+          - { label: "Email Fallback Link Text", name: "fallback_email_label", widget: "string", default: "book by email",
+              hint: "This link opens an email to your business address (set under Contact & Social Links)." }
+          - { label: "Vagaro Booking Link", name: "scheduler_url", widget: "string",
+              hint: "Must be your Vagaro booking page link. This powers the scheduler on the website.",
+              pattern: ['^https://(www\.)?vagaro\.com/.+', 'Must be a vagaro.com link starting with https://'] }
+          - { label: "Scheduler Accessibility Title", name: "scheduler_title", widget: "string",
+              hint: "Read aloud by screen readers. Fine to leave as-is." }
+          - { label: "Scheduler Height (pixels)", name: "scheduler_height", widget: "number", default: 650, min: 400, max: 1200,
+              hint: "How tall the booking window is. 650 works well — only change if Vagaro looks cut off." }
+
+      # ── CONTACT & SOCIAL ─────────────────────────────
+      - name: "contact"
+        label: "Contact & Social Links"
+        file: "content/site.json"
+        fields:
+          - { label: "Business Name", name: "business_name", widget: "string" }
+          - { label: "Owner Name", name: "owner_name", widget: "string" }
+          - { label: "Business Email", name: "email", widget: "string",
+              hint: "Used by the “book by email” fallback link and shown to Google.",
+              pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Must be a valid email address'] }
+          - { label: "Phone Number (optional)", name: "phone", widget: "string", required: false,
+              hint: "Shown to Google for local search. Leave blank to omit." }
+          - { label: "City", name: "address_locality", widget: "string", default: "Denver" }
+          - { label: "State", name: "address_region", widget: "string", default: "CO" }
+          - label: "Top Menu Labels"
+            name: "nav"
+            widget: "object"
+            hint: "The words in the menu at the top of the site. The places they scroll to are fixed."
+            fields:
+              - { label: "About Link", name: "about_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Programs Link", name: "services_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Reviews Link", name: "reviews_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Booking Button", name: "cta_label", widget: "string", pattern: ['^.{1,25}$', 'Keep this under 25 characters'] }
+          - label: "Footer Menu Labels"
+            name: "footer_nav"
+            widget: "object"
+            fields:
+              - { label: "About Link", name: "about_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Programs Link", name: "services_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Reviews Link", name: "reviews_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+              - { label: "Booking Link", name: "booking_label", widget: "string", pattern: ['^.{1,20}$', 'Keep this under 20 characters'] }
+          - label: "Social Media Links"
+            name: "social"
+            widget: "list"
+            min: 0
+            max: 5
+            hint: "Shown in the footer. Add, remove, or drag to reorder."
+            fields:
+              - { label: "Platform Name", name: "label", widget: "string", hint: "e.g. “Instagram”" }
+              - { label: "Profile Link", name: "url", widget: "string", pattern: ['^https://.+', 'Must be a full link starting with https://'] }
+          - { label: "Footer Legal Line", name: "footer_legal", widget: "string",
+              hint: "The small copyright line at the very bottom of the site." }
+
+      # ── SEO ──────────────────────────────────────────
+      - name: "seo"
+        label: "SEO & Social Sharing"
+        file: "content/seo.json"
+        fields:
+          - { label: "Browser Tab / Google Title", name: "page_title", widget: "string",
+              hint: "The title shown in Google results and the browser tab. Aim for 50–65 characters and include “Denver” + what you do.",
+              pattern: ['^.{10,70}$', 'Keep this between 10 and 70 characters'] }
+          - { label: "Google Description", name: "meta_description", widget: "text",
+              hint: "The 1–2 sentence blurb under your title in Google results. Aim for 120–160 characters.",
+              pattern: ['^[\s\S]{50,170}$', 'Keep this between 50 and 170 characters'] }
+          - { label: "Website Address (canonical)", name: "canonical_url", widget: "string",
+              hint: "⚠ Only change this if your domain changes. Ask your developer first.",
+              pattern: ['^https://.+/$', 'Must start with https:// and end with /'] }
+          - { label: "Social Share Title", name: "og_title", widget: "string",
+              hint: "The headline shown when the site is shared on Facebook, Instagram, iMessage, etc.",
+              pattern: ['^.{10,70}$', 'Keep this between 10 and 70 characters'] }
+          - { label: "Social Share Description", name: "og_description", widget: "text", pattern: ['^[\s\S]{20,200}$', 'Keep this between 20 and 200 characters'] }
+          - { label: "Social Share Image", name: "og_image", widget: "image",
+              hint: "The picture shown when someone shares your site. Roughly 1200 × 630 (landscape) or your hero photo works." }
+          - { label: "Share Image Description (Alt Text)", name: "og_image_alt", widget: "string" }
+          - { label: "Share Image Width (px)", name: "og_image_width", widget: "number", default: 1350,
+              hint: "Technical field — only change if you change the image. Ask your developer if unsure." }
+          - { label: "Share Image Height (px)", name: "og_image_height", widget: "number", default: 1688 }

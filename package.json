@@ -1,0 +1,13 @@
+{
+  "name": "milehighathlete-site",
+  "version": "2.0.0",
+  "description": "Mile High Athletics — static site with Decap CMS client portal. Zero runtime dependencies.",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx --yes serve dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

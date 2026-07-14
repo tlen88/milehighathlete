@@ -1,0 +1,9 @@
+# Mile High Athletics — Netlify redirects
+# (Also used for drag-and-drop deploys, where netlify.toml redirects are not read.)
+
+# Old Netlify subdomain → canonical domain
+https://milehighathletics.netlify.app/* https://milehighathlete.com/:splat 301!
+
+# Client portal convenience paths
+/dashboard   /admin/           301
+/login       /admin/           301

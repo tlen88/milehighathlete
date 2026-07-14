@@ -1,0 +1,16 @@
+{
+  "eyebrow": "17 Years Coaching · 300+ Clients",
+  "heading_before": "It's Not Your Body That's",
+  "heading_accent": "Failing.",
+  "heading_after": "It's Your Program.",
+  "subtext": "We build real strength, keep you lean, and train around pain so you don't stop. Hundreds of Denver clients are already doing it.",
+  "primary_cta_label": "Book Free Consultation",
+  "secondary_cta_label": "View Programs",
+  "photo": "/ty-hero-large.jpg",
+  "photo_alt": "Coach Ty Sonaty, Denver personal trainer",
+  "stats": [
+    { "number": "17+", "label": "Years Coaching", "aria": "17 plus" },
+    { "number": "300+", "label": "Clients Coached", "aria": "300 plus" },
+    { "number": "5★", "label": "Google Rating", "aria": "5 star Google rating" }
+  ]
+}

@@ -1,0 +1,96 @@
+# =============================================================
+# netlify.toml — Mile High Athletics
+# Static site + Decap CMS client portal.
+#
+# Build: `node build.js` renders content/*.json through
+# templates/index.template.js into dist/ (zero dependencies).
+# =============================================================
+
+[build]
+  publish = "dist"
+  command = "node build.js"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# =============================================================
+# SECURITY HEADERS (all routes)
+#
+# NOTE: The public page's Content-Security-Policy now lives in a
+# <meta> tag inside the generated index.html (see the template).
+# It was moved out of this file so the /admin portal — which needs
+# scripts from unpkg.com and identity.netlify.com — isn't blocked
+# by the public site's stricter policy.
+# =============================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Keep the portal out of search engines (belt and suspenders —
+# the pages also carry <meta name="robots" content="noindex">).
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Long cache for images; HTML revalidates
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# =============================================================
+# REDIRECTS  (duplicated in _redirects for drag-and-drop deploys)
+# =============================================================
+
+# Old Netlify subdomain → canonical domain
+[[redirects]]
+  from = "https://milehighathletics.netlify.app/*"
+  to = "https://milehighathlete.com/:splat"
+  status = 301
+  force = true
+
+# Client portal convenience paths
+[[redirects]]
+  from = "/dashboard"
+  to = "/admin/"
+  status = 301
+
+[[redirects]]
+  from = "/login"
+  to = "/admin/"
+  status = 301
+
+# =============================================================
+# CLIENT PORTAL — REQUIRED ONE-TIME NETLIFY DASHBOARD SETUP
+# (Cannot be configured from this file. See docs/DEVELOPER-GUIDE.md)
+#
+#   1. Site configuration → Identity → Enable Identity
+#   2. Identity → Registration → set to "Invite only"
+#   3. Identity → Services → Git Gateway → Enable
+#   4. Identity → Invite users → invite Ty's email
+#
+# No environment variables are required. Never commit secrets here.
+# =============================================================

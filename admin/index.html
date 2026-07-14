@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Site Manager — Mile High Athletics</title>
+  <link rel="icon" href="/logo-color.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/portal.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#portal-main">Skip to main content</a>
+
+  <header class="portal-header">
+    <div class="portal-header-inner">
+      <img src="/logo-white-transparent.png" alt="" width="46" height="45" />
+      <div>
+        <p class="portal-title">Mile High Athletics</p>
+        <p class="portal-subtitle">Site Manager</p>
+      </div>
+      <div class="spacer"></div>
+      <a class="btn btn-ghost" href="/" target="_blank" rel="noopener">View live website ↗</a>
+      <button id="auth-btn" class="btn btn-ghost" type="button">Log in</button>
+    </div>
+  </header>
+
+  <main id="portal-main" class="portal-main">
+
+    <h1 id="welcome-heading">Welcome, Ty 👋</h1>
+    <p class="lead">This is your website's control room. From here you can update the words, photos, programs, and reviews on <strong>milehighathlete.com</strong> — no code, no tech headaches.</p>
+
+    <!-- Signed-out state -->
+    <div id="signed-out">
+      <div class="notice notice-info">
+        <p class="status-line"><span class="status-dot gray" aria-hidden="true"></span>You're not logged in yet.</p>
+        <p>Log in with your email and password to start editing. If this is your first visit, use the invitation email you received to set your password.</p>
+      </div>
+      <div class="btn-row">
+        <button id="login-cta" class="btn btn-primary" type="button">Log in to edit your website</button>
+        <a class="btn btn-secondary" href="/admin/help/">Read the instructions first</a>
+      </div>
+    </div>
+
+    <!-- Signed-in state -->
+    <div id="signed-in" class="hidden">
+      <div class="notice notice-success">
+        <p class="status-line"><span class="status-dot" aria-hidden="true"></span><span id="signed-in-as">Signed in.</span></p>
+        <p>Remember: every change you save becomes a <strong>draft</strong> first. Nothing appears on the live website until you press <strong>Publish</strong>. After publishing, give the website a couple of minutes to update, then refresh the page to see it live.</p>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/admin/content/">Open the content editor</a>
+        <a class="btn btn-secondary" href="/" target="_blank" rel="noopener">Preview the live site ↗</a>
+      </div>
+
+      <h2>Jump straight to a section</h2>
+      <div class="card-grid">
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/hero">
+          <span class="card-icon" aria-hidden="true">🏠</span>
+          <span class="card-title">Homepage Banner</span>
+          <span class="card-desc">Headline, your photo, buttons, and quick stats.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/about">
+          <span class="card-icon" aria-hidden="true">👤</span>
+          <span class="card-title">About Coach Ty</span>
+          <span class="card-desc">Your story, credentials, and pull quote.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/programs">
+          <span class="card-icon" aria-hidden="true">💪</span>
+          <span class="card-title">Training Programs</span>
+          <span class="card-desc">Add, edit, reorder, or hide programs and features.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/reviews">
+          <span class="card-icon" aria-hidden="true">⭐</span>
+          <span class="card-title">Client Reviews</span>
+          <span class="card-desc">Keep your Google reviews fresh and current.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/hyperbaric">
+          <span class="card-icon" aria-hidden="true">🫁</span>
+          <span class="card-title">Hyperbaric Chamber</span>
+          <span class="card-desc">Wellness copy, chamber photos, and research link.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/booking">
+          <span class="card-icon" aria-hidden="true">📅</span>
+          <span class="card-title">Booking &amp; Scheduling</span>
+          <span class="card-desc">Consultation copy and your Vagaro booking link.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/contact">
+          <span class="card-icon" aria-hidden="true">✉️</span>
+          <span class="card-title">Contact &amp; Social</span>
+          <span class="card-desc">Email, menu labels, Instagram and Facebook links.</span>
+        </a>
+        <a class="portal-card" href="/admin/content/#/collections/pages/entries/seo">
+          <span class="card-icon" aria-hidden="true">🔍</span>
+          <span class="card-title">SEO &amp; Sharing</span>
+          <span class="card-desc">How your site appears on Google and social media.</span>
+        </a>
+      </div>
+
+      <h2>How publishing works</h2>
+      <ol class="steps">
+        <li><strong>Edit</strong> — open a section above and change the text or images.</li>
+        <li><strong>Save</strong> — your change is stored as a draft. The live site is untouched.</li>
+        <li><strong>Publish</strong> — set the draft's status to “Ready”, then choose <strong>Publish</strong>. The website rebuilds itself automatically.</li>
+        <li><strong>Check</strong> — after a couple of minutes, refresh milehighathlete.com and confirm your change is live.</li>
+      </ol>
+    </div>
+
+    <h2>Need help?</h2>
+    <div class="card-grid">
+      <a class="portal-card" href="/admin/help/">
+        <span class="card-icon" aria-hidden="true">📖</span>
+        <span class="card-title">Instruction Handbook</span>
+        <span class="card-desc">Step-by-step guides for every kind of update.</span>
+      </a>
+      <div class="portal-card">
+        <span class="card-icon" aria-hidden="true">🆘</span>
+        <span class="card-title">Contact Support</span>
+        <span class="card-desc"><!-- SUPPORT CONTACT: replace with your name/email/phone before handoff -->Contact your website developer for anything the handbook doesn't cover.</span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="portal-footer">
+    <p>Mile High Athletics · Site Manager · <a href="/admin/help/">Help</a> · <a href="/" target="_blank" rel="noopener">milehighathlete.com</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var authBtn   = document.getElementById('auth-btn');
+      var loginCta  = document.getElementById('login-cta');
+      var signedIn  = document.getElementById('signed-in');
+      var signedOut = document.getElementById('signed-out');
+      var whoami    = document.getElementById('signed-in-as');
+      var heading   = document.getElementById('welcome-heading');
+
+      function renderState(user) {
+        var isIn = !!user;
+        signedIn.classList.toggle('hidden', !isIn);
+        signedOut.classList.toggle('hidden', isIn);
+        authBtn.textContent = isIn ? 'Log out' : 'Log in';
+        if (isIn) {
+          var name = (user.user_metadata && user.user_metadata.full_name) || user.email;
+          whoami.textContent = 'Signed in as ' + name + '.';
+          heading.textContent = 'Welcome back' + (user.user_metadata && user.user_metadata.full_name ? ', ' + user.user_metadata.full_name.split(' ')[0] : '') + ' 👋';
+        } else {
+          heading.textContent = 'Welcome to your Site Manager';
+        }
+      }
+
+      if (window.netlifyIdentity) {
+        netlifyIdentity.on('init',   renderState);
+        netlifyIdentity.on('login',  function (u) { renderState(u); netlifyIdentity.close(); });
+        netlifyIdentity.on('logout', function ()  { renderState(null); });
+
+        authBtn.addEventListener('click', function () {
+          netlifyIdentity.currentUser() ? netlifyIdentity.logout() : netlifyIdentity.open('login');
+        });
+        if (loginCta) loginCta.addEventListener('click', function () { netlifyIdentity.open('login'); });
+      } else {
+        // Identity script blocked/unavailable — degrade gracefully
+        authBtn.classList.add('hidden');
+      }
+    })();
+  </script>
+</body>
+</html>

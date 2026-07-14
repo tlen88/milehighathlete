@@ -1,0 +1,13 @@
+{
+  "heading": "Hyperbaric Wellness Chamber",
+  "intro": "At Mile High Athlete, our hyperbaric oxygen therapy sessions combine a pressurized chamber at 1.5 ATA with concentrated oxygen delivered through a mask. At Denver's elevation, this creates an oxygen environment that can deliver oxygen pressure to the lungs that is approximately eight times greater than breathing normal air.",
+  "chamber_image": "/images/airvida-hyperbaric-chamber-800.jpeg",
+  "chamber_image_alt": "Airvida Pro 90 hyperbaric wellness chamber at Mile High Athlete",
+  "body": "While the body is already efficient at carrying oxygen in the bloodstream, hyperbaric oxygen therapy significantly increases the amount of oxygen dissolved directly into the plasma, allowing it to reach tissues more effectively. This enhanced oxygen delivery may support recovery from intense exercise, promote circulation, reduce inflammation, assist the body's natural healing processes, improve mental clarity and energy levels, and help optimize overall wellness. Many clients use HBOT to accelerate recovery, support injury rehabilitation, improve resilience to physical stress, and maintain peak performance in both fitness and daily life.",
+  "benefits_image": "/images/hbot-benefits.jpg",
+  "benefits_image_alt": "Hyperbaric wellness benefits including post-workout recovery, mental clarity, restorative sleep, physical resilience, circulation support, and overall wellness",
+  "cta_label": "Schedule a Session",
+  "disclaimer": "Mile High Athlete offers Airvida Pro 90 Hyperbaric Wellness Sessions designed to complement personalized training, active lifestyles, and long-term performance goals. Hyperbaric wellness sessions are intended for general wellness and recovery support and are not a substitute for medical diagnosis or treatment. Individual experiences may vary.",
+  "research_link_url": "https://journals.sagepub.com/doi/abs/10.1089/ict.2022.29033.jso",
+  "research_link_label": "Explore the Research"
+}

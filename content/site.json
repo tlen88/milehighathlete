@@ -1,0 +1,31 @@
+{
+  "business_name": "Mile High Athletics",
+  "owner_name": "Ty Sonaty",
+  "email": "milehighathlete@gmail.com",
+  "phone": "",
+  "address_locality": "Denver",
+  "address_region": "CO",
+  "nav": {
+    "about_label": "About",
+    "services_label": "Programs",
+    "reviews_label": "Reviews",
+    "cta_label": "Book Free Consult"
+  },
+  "footer_nav": {
+    "about_label": "About",
+    "services_label": "Programs",
+    "reviews_label": "Reviews",
+    "booking_label": "Book Now"
+  },
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/coach_ty_sonaty"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/ty.ryan.9"
+    }
+  ],
+  "footer_legal": "© 2026 Mile High Athletics · Personal Trainer Denver, CO · Coach Ty Sonaty"
+}

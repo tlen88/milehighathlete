@@ -1,0 +1,11 @@
+# _headers — Mile High Athletics
+# Belt-and-suspenders: duplicates netlify.toml headers.
+# Netlify processes both; netlify.toml takes precedence.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload

@@ -1,0 +1,48 @@
+{
+  "eyebrow": "Training Programs",
+  "heading": "Choose Your Path",
+  "subhead": "Every program includes direct coaching from Ty, custom programming, and the accountability to actually follow through.",
+  "programs": [
+    {
+      "name": "Premier Hybrid Training",
+      "featured": true,
+      "featured_badge": "Most Popular",
+      "visible": true,
+      "features": [
+        "2 to 3 fully individualized 1-on-1 training sessions per week",
+        "Reserved training slot for consistency and structure",
+        "Customized nutrition plan aligned with your goals",
+        "Additional programmed sessions delivered through the app",
+        "Ongoing coaching, support, and accountability"
+      ],
+      "button_label": "Get Started"
+    },
+    {
+      "name": "Hybrid Training",
+      "featured": false,
+      "featured_badge": "",
+      "visible": true,
+      "features": [
+        "1 individualized 1-on-1 training session per week",
+        "Additional solo training sessions delivered through the app",
+        "Customized nutrition plan",
+        "Ongoing support and accountability"
+      ],
+      "button_label": "Get Started"
+    },
+    {
+      "name": "Online Coaching",
+      "featured": false,
+      "featured_badge": "",
+      "visible": true,
+      "features": [
+        "Custom programming delivered remotely",
+        "Weekly check-ins with Coach Ty",
+        "Video form reviews",
+        "Nutrition & lifestyle guidance",
+        "Train anywhere, anytime"
+      ],
+      "button_label": "Inquire Now"
+    }
+  ]
+}

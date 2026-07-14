@@ -1,0 +1,177 @@
+/* =====================================================
+   MILE HIGH ATHLETICS — Client Portal styles
+   Shared by /admin/ (dashboard) and /admin/help/.
+   Mirrors the public site's brand tokens (style.css).
+   ===================================================== */
+
+:root {
+  --blue:        #1565c0;
+  --blue-dark:   #0d47a1;
+  --blue-light:  #1e88e5;
+  --black:       #0a0a0a;
+  --dark:        #111111;
+  --white:       #ffffff;
+  --off-white:   #f6f6f6;
+  --light-gray:  #eeeeee;
+  --text-primary:   #111111;
+  --text-secondary: #3d3d3d;
+  --text-muted:     #595959;
+  --green:       #1b7a3d;
+  --amber-bg:    #fff7e6;
+  --amber-line:  #b26a00;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --font-body:    'Barlow', Arial, sans-serif;
+  --r:    6px;
+  --r-lg: 12px;
+  --max-w: 980px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+.skip-link {
+  position: absolute; top: -200%; left: 1rem; z-index: 9999;
+  padding: 0.75rem 1.5rem; background: var(--blue); color: #fff;
+  font-weight: 600; border-radius: var(--r); text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: var(--r); }
+:focus:not(:focus-visible) { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.portal-header {
+  background: var(--black);
+  color: #f5efe4;
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+}
+.portal-header-inner {
+  max-width: var(--max-w); margin-inline: auto;
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.portal-header img { width: 46px; height: auto; }
+.portal-header .portal-title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.portal-header .portal-subtitle { font-size: 0.9rem; opacity: 0.75; }
+.portal-header .spacer { flex: 1; }
+
+/* ── Layout ─────────────────────────────────────────── */
+.portal-main {
+  max-width: var(--max-w); margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem) 4rem;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.1; text-transform: uppercase; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.5rem; }
+h2 { font-size: clamp(1.35rem, 3vw, 1.8rem); margin: 2.2rem 0 0.8rem; }
+h3 { font-size: 1.15rem; margin: 1.4rem 0 0.5rem; }
+p  { margin-bottom: 0.9rem; max-width: 72ch; }
+ul, ol { margin: 0 0 1rem 1.4rem; }
+li { margin-bottom: 0.35rem; }
+a { color: var(--blue); text-underline-offset: 2px; }
+a:hover { color: var(--blue-dark); }
+
+.lead { font-size: 1.15rem; color: var(--text-secondary); }
+
+/* ── Cards & grids ──────────────────────────────────── */
+.card-grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  margin: 1.25rem 0 0;
+}
+.portal-card {
+  background: var(--white); border: 1px solid var(--light-gray);
+  border-radius: var(--r-lg); padding: 1.25rem 1.25rem 1.4rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display: flex; flex-direction: column; gap: 0.35rem;
+  text-decoration: none; color: var(--text-primary);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+a.portal-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.12); transform: translateY(-2px); color: var(--text-primary); }
+.portal-card .card-icon { font-size: 1.5rem; line-height: 1; }
+.portal-card .card-title {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+.portal-card .card-desc { font-size: 0.92rem; color: var(--text-muted); }
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
+  padding: 0.85rem 1.7rem; border-radius: var(--r); text-decoration: none;
+  border: 2px solid transparent; cursor: pointer; min-height: 48px;
+  transition: background 180ms ease, color 180ms ease;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-secondary { background: transparent; color: var(--blue); border-color: var(--blue); }
+.btn-secondary:hover { background: var(--blue); color: #fff; }
+.btn-ghost { background: transparent; color: #f5efe4; border-color: rgba(255,255,255,0.5); font-size: 0.95rem; padding: 0.5rem 1.1rem; min-height: 40px; }
+.btn-ghost:hover { border-color: #fff; color: #fff; }
+.btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.4rem 0; }
+
+/* ── Status / notice blocks ─────────────────────────── */
+.notice {
+  border-radius: var(--r-lg); padding: 1rem 1.25rem; margin: 1.25rem 0;
+  border: 1px solid var(--light-gray); background: var(--white);
+}
+.notice-info    { border-left: 5px solid var(--blue); }
+.notice-success { border-left: 5px solid var(--green); }
+.notice-warn    { border-left: 5px solid var(--amber-line); background: var(--amber-bg); }
+.notice p:last-child { margin-bottom: 0; }
+
+.status-line { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; }
+.status-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); flex: none; }
+.status-dot.gray { background: #9e9e9e; }
+
+/* ── Steps (handbook) ───────────────────────────────── */
+.steps { counter-reset: step; list-style: none; margin-left: 0; }
+.steps > li {
+  counter-increment: step; position: relative;
+  padding: 0 0 1.1rem 3rem; margin: 0;
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Tables (handbook) ──────────────────────────────── */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; background: #fff; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.6rem 0.8rem; border: 1px solid var(--light-gray); vertical-align: top; }
+th { background: var(--black); color: #f5efe4; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
+tr:nth-child(even) td { background: var(--off-white); }
+
+/* ── Footer ─────────────────────────────────────────── */
+.portal-footer {
+  border-top: 1px solid var(--light-gray);
+  padding: 1.5rem clamp(1rem, 4vw, 2rem) 2.5rem;
+  text-align: center; color: var(--text-muted); font-size: 0.9rem;
+}
+
+/* ── Utility ────────────────────────────────────────── */
+.muted { color: var(--text-muted); }
+.kbd {
+  font-family: ui-monospace, Menlo, monospace; font-size: 0.9em;
+  background: var(--light-gray); padding: 0.1em 0.45em; border-radius: 4px;
+}
+.hidden { display: none !important; }

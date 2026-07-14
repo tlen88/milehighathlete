@@ -1,0 +1,28 @@
+{
+  "eyebrow": "Google Reviews",
+  "heading": "Real People. Real Results.",
+  "subhead": "Verified Google reviews from current and past Denver clients. No fluff, no filters.",
+  "reviews": [
+    {
+      "name": "Michael R.",
+      "quote": "Ty completely changed how I think about training. I came in with a bad back and left with a whole new approach to movement. He's not just a trainer — he's a real coach.",
+      "source": "Google Review · Verified Client",
+      "visible": true
+    },
+    {
+      "name": "Sarah K.",
+      "quote": "I've trained with a lot of coaches over the years. Ty is the first one who actually adjusted the plan when life got in the way instead of just telling me to push through. The results speak for themselves.",
+      "source": "Google Review · Verified Client",
+      "visible": true
+    },
+    {
+      "name": "Dave M.",
+      "quote": "After three knee surgeries I thought heavy lifting was behind me. Ty's mobility work alone was worth it. I'm moving better at 47 than I was at 35.",
+      "source": "Google Review · Verified Client",
+      "visible": true
+    }
+  ],
+  "rating_summary": "5.0 on Google",
+  "google_reviews_url": "https://www.google.com/search?q=Mile+High+Athletics+Denver+reviews",
+  "google_reviews_link_label": "View all reviews on Google Business Profile"
+}

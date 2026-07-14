@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Content Editor — Mile High Athletics Site Manager</title>
+  <link rel="icon" href="/logo-color.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Netlify Identity (email + password login for the portal) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* ── Mile High Athletics branding over the Decap editor ──
+       Kept intentionally light so CMS upgrades don't break it. */
+    :root {
+      --mha-blue: #1565c0;
+      --mha-blue-dark: #0d47a1;
+      --mha-black: #0a0a0a;
+    }
+    body { margin: 0; }
+
+    /* Branded loading state before the app mounts */
+    #mha-loading {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 18px;
+      background: var(--mha-black); color: #f5efe4;
+      font-family: 'Barlow', Arial, sans-serif; z-index: 999;
+      transition: opacity 300ms ease;
+    }
+    #mha-loading img { width: 92px; height: auto; }
+    #mha-loading p { margin: 0; letter-spacing: 0.04em; }
+    #mha-loading .mha-title {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 800; font-size: 1.5rem; text-transform: uppercase;
+    }
+    #mha-loading .mha-sub { opacity: 0.7; font-size: 0.95rem; }
+
+    /* Floating help button — always available inside the editor */
+    #mha-help {
+      position: fixed; right: 18px; bottom: 18px; z-index: 300;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--mha-blue); color: #fff; text-decoration: none;
+      font-family: 'Barlow', Arial, sans-serif; font-weight: 600;
+      font-size: 15px; padding: 12px 18px; border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    #mha-help:hover, #mha-help:focus { background: var(--mha-blue-dark); }
+    #mha-help:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+    /* Back-to-dashboard button */
+    #mha-back {
+      position: fixed; left: 18px; bottom: 18px; z-index: 300;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--mha-black); text-decoration: none;
+      border: 2px solid var(--mha-black);
+      font-family: 'Barlow', Arial, sans-serif; font-weight: 600;
+      font-size: 15px; padding: 10px 16px; border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    #mha-back:hover, #mha-back:focus { background: #f0f0f0; }
+    #mha-back:focus-visible { outline: 3px solid var(--mha-blue); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <div id="mha-loading" role="status" aria-live="polite">
+    <img src="/logo-white-transparent.png" alt="" width="92" height="90" />
+    <p class="mha-title">Mile High Athletics</p>
+    <p class="mha-sub">Loading your content editor…</p>
+  </div>
+
+  <!-- Decap CMS (pinned to v3.x) -->
+  <script src="https://unpkg.com/decap-cms@%5E3.0.0/dist/decap-cms.js"></script>
+
+  <a id="mha-help" href="/admin/help/" target="_blank" rel="noopener">
+    <span aria-hidden="true">?</span> Help
+  </a>
+  <a id="mha-back" href="/admin/">‹ Dashboard</a>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Make the editor preview pane use the real website styles
+      if (window.CMS) {
+        window.CMS.registerPreviewStyle('/style.css');
+      }
+
+      // Hide branded loader once the CMS app has mounted
+      var loader = document.getElementById('mha-loading');
+      var tries = 0;
+      var poll = setInterval(function () {
+        tries++;
+        var mounted = document.getElementById('nc-root') &&
+                      document.getElementById('nc-root').children.length > 0;
+        if (mounted || tries > 100) {
+          loader.style.opacity = '0';
+          setTimeout(function () { loader.remove(); }, 350);
+          clearInterval(poll);
+        }
+      }, 150);
+
+      // After logout, land back on the portal dashboard
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('logout', function () {
+          window.location.href = '/admin/';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
